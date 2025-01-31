@@ -5,19 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parking App</title>
     <script defer src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Parking App</h1>
     <form id="parking-form">
-        <input type="text" id="name" placeholder="Enter license plate" required />
-        <select id="action">
-            <option value="check-in">Check In</option>
-            <option value="check-out">Check Out</option>
-        </select>
-        <button type="submit">Submit</button>
+        <input type="text" id="name" placeholder="Enter your name" required />
+        <div class="action-buttons">
+            <button type="button" class="check-in-btn">Check In</button>
+            <button type="button" class="check-out-btn">Check Out</button>
+        </div>
     </form>
+    <div class="publish-buttons">
+        <h2 id="duration-display">Duration: --</h2>
+        <button type="button" id="publish-btn">Publish to Server</button>
+    </div>
     <div id="response"></div>
-
     <div id="doc"></div>
+    <div id="local-storage-preview">
+        <h2>Latest Local Entries</h2>
+        <table id="local-entries-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Action</th>
+                    <th>Timestamp</th>
+                    <th>Duration</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
 </body>
 </html>
